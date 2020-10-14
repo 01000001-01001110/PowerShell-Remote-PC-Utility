@@ -24,7 +24,7 @@
   #During development my system updated and I had to add Add-Type -AssemblyName PresentationFramework for everything to stop failing. Not sure what happened there.
   #Fairly simple I replicated what worked once throughout every button in this script. Worked well. 
 #Version 0.0.2
-  #Release Date: 
+  #Release Date: 10/14/2020
   #Changes: Modified the OS info button to  Invoke-Command -ComputerName $Computername -Credential sfbosaa\anewingham -ScriptBlock { Get-CimInstance -ClassName Win32_OperatingSystem | select-object CSName, Caption, CSDVersion, OSType, LastBootUpTime, ProductType }
     #Invoke command works much better with no error, and I changed the WMI query to CIM as WMI shouldn't be used anymore. 
   #Changed the orientation of buttons to get ready to increase window size and re-orient.
