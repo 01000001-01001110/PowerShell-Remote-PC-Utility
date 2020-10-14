@@ -32,6 +32,8 @@
   #Replaced the text view with datagrid
     #This was a lot bigger of a task than I initially anticipated. 
   #Increasing size of tool to 450x700 to accomodate new tools being added. 
+  #Initiated a few button configs to run Invoke-Command
+  #Initiated a few queries to make use of pssession 
   #Added both the computer search bar and output windows to anchor to the left of the window
     #This was done to expand the gridview window in case there is data that expands past the 700px I have the window set for. 
   #Moved first buttons down a bit from the top of the group box
@@ -271,7 +273,7 @@
       If (-NOT ([string]::IsNullOrEmpty($InputBox_txtbx.Text)))  {
           $Computername  = $InputBox_txtbx.Text
           $WinRemAss = "$env:systemroot/system32/msra.exe"
-          Start-Process $WinRemAss -ArgumentList "/OfferRA $ComputerName" -Wait -NoNewWindow 
+          Start-Process $WinRemAss -ArgumentList "/OfferRA $ComputerName" -Wait -NoNewWindow -RunAsAdministrator
           <#
             The following three statements are equivalent and should produce the same results:
             -Start-Process $WinRemAss -ArgumentList "/OfferRA $Computer" -Wait -NoNewWindow
