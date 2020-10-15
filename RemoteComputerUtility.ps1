@@ -374,7 +374,7 @@
                   Add-WUServiceManager -MicrosoftUpdate
                   Install-Module PSWindowsUpdate
                   Start-Sleep 30
-                  Install-WindowsUpdate -MicrosoftUpdate -AcceptAll -AutoReboot | Out-File "\\fs2\groups\IT\IT Only\UpdateLogs\$Computername-$(Get-Date -f yyyy-MM-dd)-MSUpdates.log" -Force 
+                  Install-WindowsUpdate -MicrosoftUpdate -AcceptAll -AutoReboot | Out-File "\\UpdateLogs\$Computername-$(Get-Date -f yyyy-MM-dd)-MSUpdates.log" -Force 
                }
 
                Remove-PSSession
